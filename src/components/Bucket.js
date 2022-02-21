@@ -29,7 +29,7 @@ function Bucket(props) {
     // Hint: use a ternary operator
     <div className={ } key={}>
 
-      // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument
+      {/* // TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument */}
       <div key={} onClick={}>
           {/* TODO: Add the item text here */}
       </div>
