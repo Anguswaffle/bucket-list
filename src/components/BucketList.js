@@ -7,20 +7,33 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
-    item.text ? setBucket([...bucket, item]) : console.log('You must include your bucket item!')
+
+    item.text ? setBucket([item, ...bucket]) : console.log('You must include your bucket item!')
+    console.log(item)
+    console.log([...bucket])
   };
 
   // Function to mark bucket list item as complete
   const completeBucketItem = (id) => {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
-    const updatedBucket = bucket.map((item) => item.id === id ? item.complete = true : null);
+    // const updatedBucket = bucket.map((item) => {
+    //   item.id === id ? item.isComplete = !item.isComplete : null
+    //   return item;
+    // });
+    const updatedBucket = bucket.map((item) => {
+      if(item.id === id) item.isComplete = !item.isComplete
+      return item;
+    })
 
+
+    console.log(updatedBucket)
     setBucket(updatedBucket);
   };
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
     // Filters out item with a given id from bucket array
+    // Do you need to spread bucket?
     const updatedBucket = bucket.filter((item) => item.id !== id)
     setBucket(updatedBucket)
   };
